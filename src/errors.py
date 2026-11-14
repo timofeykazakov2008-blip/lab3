@@ -11,6 +11,9 @@ class NonObjectErrors(CatalogError):
 class FileErrors(CatalogError):
     '''Ошибка загрузки и сохранения каталога'''
 
+class LegalJson(FileErrors):
+    '''Ошибка поврежденного json файла'''
+
 class ProductErrors(CatalogError):
     '''Ошибка данных продукта'''
 
