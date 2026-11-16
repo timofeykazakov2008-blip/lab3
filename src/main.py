@@ -10,6 +10,7 @@ from src.product import AirDetail
 
 
 def crt_parser() -> argparse.ArgumentParser:
+    '''Создание парсера для дальнейшего ввода команд со строки'''
     parser = argparse.ArgumentParser(description = 'Каталог деталей')
     commands = parser.add_subparsers(dest = 'command', required = True)
     commands.add_parser('list', help = 'Показывает все детали из каталога')
@@ -38,6 +39,7 @@ def crt_parser() -> argparse.ArgumentParser:
     return parser
 
 def write_details(details: Iterable[AirDetail]) -> None:
+    '''Выписывание детали'''
     product = list(details)
     if not product:
         sys.stdout.write('Деталей нет\n')
@@ -46,6 +48,7 @@ def write_details(details: Iterable[AirDetail]) -> None:
         sys.stdout.write(f'{detail}\n')
 
 def main() -> None:
+    '''Основная функция выполнения команд'''
     parser = crt_parser()
     arg = parser.parse_args()
     catalog = Catalog()

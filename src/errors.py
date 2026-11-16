@@ -11,6 +11,9 @@ class NonObjectErrors(CatalogError):
 class FileErrors(CatalogError):
     '''Ошибка загрузки и сохранения каталога'''
 
+class UnsupportedVersionError(FileErrors):
+    '''Неподдерживаемая версия формата каталога'''
+
 class LegalJson(FileErrors):
     '''Ошибка поврежденного json файла'''
 

@@ -6,24 +6,29 @@ from src.product import AirDetail
 
 class Catalog:
     def __init__(self) -> None:
+        '''Создания словаря деталей в каталоге'''
         self.details: dict[str, AirDetail] = {}
 
     def add(self, detail : AirDetail) -> None:
+        '''Добавление детали'''
         if detail.identifier in self.details:
             raise DublErrors(f'Деталь с ID {detail.identifier} уже существует')
         self.details[detail.identifier] = detail
 
     def get(self, id : str) -> AirDetail:
+        '''Взятие детали по индексу'''
         if id not in self.details:
             raise NonObjectErrors(f'Деталь с ID {id} не существует')
         return(self.details[id])
 
     def remove(self, id : str) -> None:
+        '''Удалене детали по индексу'''
         if id not in self.details:
             raise NonObjectErrors(f'Деталь с ID {id} не существует')
         del self.details[id]
 
     def find_by_category(self, category : str) -> list[AirDetail]:
+        '''Все детали определенной категории'''
         match = []
         category = category.strip()
         for detail in self.details.values():
@@ -32,6 +37,7 @@ class Catalog:
         return match
 
     def find_by_name(self, name : str) -> list[AirDetail]:
+        '''Все детали по имени'''
         match = []
         for detail in self.details.values():
             if detail.name.casefold() == name.strip().casefold():
@@ -39,10 +45,13 @@ class Catalog:
         return match
 
     def __len__(self) -> int:
+        '''Длина каталога'''
         return(len(self.details))
 
     def __iter__(self) -> Iterator[AirDetail]:
+        '''Функция для итераций каталога'''
         return(iter(self.details.values()))
 
     def __contains__(self, id : str) -> bool:
+        '''Функция для определения детали в каталоге'''
         return id in self.details

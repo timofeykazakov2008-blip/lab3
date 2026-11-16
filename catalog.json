@@ -1,0 +1,37 @@
+{
+  "format_version": 1,
+  "details": [
+    {
+      "identifier": "0018",
+      "name": "Лопатка турбины",
+      "category": "Двигатель",
+      "date": "05.07.2021",
+      "fabricator": "Авиадеталь",
+      "compatibility": "Airbus A320"
+    },
+    {
+      "identifier": "0019",
+      "name": "Колесо шасси",
+      "category": "Шасси",
+      "date": "20.11.2022",
+      "fabricator": "Авиакомплект",
+      "compatibility": "Boeing 737"
+    },
+    {
+      "identifier": "1017",
+      "name": "Турбина s110",
+      "category": "Двигатель",
+      "date": "12.10.2010",
+      "fabricator": "Крутыши",
+      "compatibility": "Boeing 800"
+    },
+    {
+      "identifier": "0017",
+      "name": "Турбина s210",
+      "category": "Двигатель",
+      "date": "12.03.2020",
+      "fabricator": "МАИ",
+      "compatibility": "Boeing 737"
+    }
+  ]
+}
